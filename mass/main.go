@@ -33,4 +33,21 @@ func main() {
 	for _, element := range slice2 { // Перебор без i
 		fmt.Printf("%d\n", element)
 	}
+
+	// Карты (для производительности, вместо среза и массива)
+	var money map[string]int = map[string]int{ // Типы: [[ключ]][значение]
+		"dollars": 1000, // [ключ][значение]
+		"euros":   2000,
+		"apples":  3,
+	} // порядок не сохраняется, значения будут располагаться по возрастанию
+	fmt.Println(money)
+	fmt.Println(money["euros"])
+	delete(money, "apples") // удаление по ключу apples
+	fmt.Println(money)
+	// element - значение по ключу, если он существует
+	// status - bool, существование значения по ключу
+	element, status := money["dollars"]
+	fmt.Println(element, status)
+	element1, status1 := money["ruble"]
+	fmt.Println(element1, status1)
 }
