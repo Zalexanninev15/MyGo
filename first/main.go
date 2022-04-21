@@ -1,6 +1,9 @@
 package main // Иекущий файл с кодом
 
-import "fmt" // Импорт для использования функций
+import (
+	"fmt"
+	"math"
+) // Импорт для использования функций
 
 func main() {
 	// Присваивание - var [var] [type]
@@ -40,4 +43,47 @@ func main() {
 		fmt.Println(i1)
 		i1 += 10
 	}
+
+	// Отложенный вызов функции
+	defer fmt.Println("\nв конце выполнения приложения")
+	fmt.Println("Функция вызывается отложено")
+
+	// Switch
+	var h string = "A"
+	switch h {
+	case "A":
+		fmt.Println("Is 'A'")
+	case "B":
+		fmt.Println("Is 'B'")
+	case "C":
+		fmt.Println("Is 'C'")
+	default:
+		fmt.Println("Is ?")
+	}
+	var l int8 = 3
+	switch {
+	case l > 2:
+		fmt.Println("Число больше 2")
+		fallthrough // Продолжить выаолнение для других case при совпадении
+	case l < 10:
+		fmt.Println("Число меньше 10")
+	}
+
+	// Округление числа
+	var a float64 = 58.27845
+	result := math.Ceil(a) // Округление к большему значению
+	fmt.Println(result)
+	result = math.Floor(a) // Округление к меньшему значению
+	fmt.Println(result)
+	result = math.Round(a) // Обычное округление
+	fmt.Println(result)
+
+	// Форматирование
+	money := 1002.492
+	bool_value := false
+	// Для int - %d
+	// Для string - %s
+	// Для float - %f
+	// Для bool - %t
+	fmt.Printf("My age is %d. My name is %s. I have %f dollars. Value is %t", age, name, money, bool_value)
 }
