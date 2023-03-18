@@ -12,7 +12,7 @@ func main() {
 		fmt.Println(list[i])
 	}
 
-	// Многомерный массив
+	// Многомерный массив (матрица)
 	array := [3][4]int{{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11}}
 	fmt.Println(array[1][2]) // Из 2 массива вывести 3 элемент (по-человечески)
 
@@ -50,4 +50,13 @@ func main() {
 	fmt.Println(element, status)
 	element1, status1 := money["ruble"]
 	fmt.Println(element1, status1)
+
+	// Матрица
+	matrix := [][]int{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}
+	for _, row := range matrix {
+		for _, element := range row {
+			fmt.Printf("%d ", element)
+		}
+		fmt.Println()
+	}
 }
